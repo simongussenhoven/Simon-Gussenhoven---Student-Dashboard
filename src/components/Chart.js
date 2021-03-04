@@ -18,8 +18,8 @@ function Chart(props) {
                     x="project"
                     y="avgRating"
                     animate={{
-                        duration: 300,
-                        onLoad: 300,
+                        duration: 500,
+                        onLoad: 100,
                         easing: "cubicInOut",
                     }}
                 />
@@ -28,14 +28,21 @@ function Chart(props) {
                     x="project"
                     y="avgDiff"
                     animate={{
-                        duration: 300,
-                        onLoad: 300,
+                        duration: 500,
+                        onLoad: 100,
                         easing: "cubicInOut",
                     }}
                 />
             </VictoryGroup>
             <VictoryAxis axisLabelComponent={<VictoryLabel angle={-45} textAnchor="end" />} style={{ tickLabels: { angle: -45, textAnchor: "end" } }} />
-            <VictoryAxis dependentAxis axisLabelComponent={<VictoryLabel dy={20} />} label="Ratings ⮕" style={{ axisLabel: { padding: 50 } }} tickValues={[1.0, 2.0, 3.0, 4.0, 5.0]} domain={[0.0, 5.0]} />
+            <VictoryAxis
+                dependentAxis
+                axisLabelComponent={<VictoryLabel dy={20} />}
+                label="Ratings ⮕"
+                style={{ axisLabel: { padding: 50 } }}
+                tickValues={[1.0, 2.0, 3.0, 4.0, 5.0]}
+                domain={[0.0, 5.0]}
+            />
         </VictoryChart>
     );
 }

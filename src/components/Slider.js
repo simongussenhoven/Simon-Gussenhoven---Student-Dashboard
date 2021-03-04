@@ -7,7 +7,7 @@ function Slider(props) {
         superLargeDesktop: {
             // the naming can be any, depends on you.
             breakpoint: { max: 4000, min: 3000 },
-            items: 6,
+            items: 8,
         },
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
@@ -25,32 +25,26 @@ function Slider(props) {
     return (
         <div className="container">
             <Carousel responsive={responsive}>
-                <div key={uuid()} className="card mx-2">
-                    <div className="card-body d-flex justify-content-center align-content-center flex-column">
-                        <img className="w-50 rounded-circle mx-auto" src={process.env.PUBLIC_URL + `/user-img/users.png`} alt="users" />
-                        <h5 className="card-title mx-auto my-2">All users</h5>
-                        <Link className="d-flex justify-content-center" to="/">
-                            <button onClick={() => props.handleInput("all", "all")} className="btn btn-primary mx-auto">
-                                View all
-                            </button>
-                        </Link>
+                <Link className="d-flex justify-content-center" to="/" onClick={() => props.handleInput("all", "all")}>
+                    <div key={uuid()} className="card mx-2">
+                        <div className="card-body d-flex justify-content-center align-content-center flex-column">
+                            <img className="w-50 rounded-circle mx-auto" src={process.env.PUBLIC_URL + `/user-img/users.png`} alt="users" />
+                            <h5 className="card-title mx-auto my-2">All users</h5>
+                        </div>
                     </div>
-                </div>
+                </Link>
                 {props.names.map((student) => {
                     return (
-                        <div key={uuid()} className="card mx-2">
-                            <div className="card-body d-flex justify-content-center align-content-center flex-column">
-                                <img className="w-50 rounded-circle mx-auto" src={process.env.PUBLIC_URL + `/user-img/${student.name}.jpg`} alt={`"${student.name}"`} />
-                                <h5 className="card-title mx-auto my-2">
-                                    {student.name} {student.lastname}
-                                </h5>
-                                <Link className="d-flex justify-content-center" to={`/${student.name}`}>
-                                    <button onClick={() => props.handleInput(student.name, "click")} className="btn btn-primary mx-auto">
-                                        View stats
-                                    </button>
-                                </Link>
+                        <Link className="d-flex justify-content-center text-decoration-none text-dark" to={`/${student.name}`} onClick={() => props.handleInput(student.name, "click")}>
+                            <div key={uuid()} className="card mx-2">
+                                <div className="card-body d-flex justify-content-center align-content-center flex-column">
+                                    <img className="w-50 rounded-circle mx-auto" src={process.env.PUBLIC_URL + `/user-img/${student.name}.jpg`} alt={`"${student.name}"`} />
+                                    <h5 className="card-title mx-auto my-2">
+                                        {student.name} {student.lastname}
+                                    </h5>
+                                </div>
                             </div>
-                        </div>
+                        </Link>
                     );
                 })}
             </Carousel>
