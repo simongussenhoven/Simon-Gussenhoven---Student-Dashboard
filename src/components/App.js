@@ -153,6 +153,12 @@ class App extends React.Component {
         }
     };
 
+    getRouting = () => {
+        return this.state.selectedStudents.map((student) => {
+            return <Route key={uuid()} path={"/" + student.name} render={() => <PersonalHeader {...this.state} student={student} handleInput={this.handleInput} />} />;
+        });
+    };
+
     render() {
         if (this.state.hasLoaded === false) {
             return <Loader />;
@@ -163,17 +169,13 @@ class App extends React.Component {
                         <Slider names={this.state.selectedStudents} handleInput={this.handleInput} />
                         <Controls sortReviews={this.sortReviews} sorting={this.state.sorting} selectView={this.selectView} view={this.state.view} averages={this.state.averages} />
                         <Switch>
-                            {this.state.selectedStudents.map((student) => {
-                                return <Route key={uuid()} path={"/" + student.name} render={() => <PersonalHeader {...this.state} student={student} handleInput={this.handleInput} />} />;
-                            })}
+                            {this.getRouting()}
                             <Route key={uuid()} path="/" render={() => <MainHeader {...this.state} />} />;
                         </Switch>
                         <div className="container">
                             <div className="row">
-                            <div className="col-12 col-md-10">
-                                {this.getContent()}
-                            </div>
-                                {this.getSideBar()}
+                                <div className="col-12 col-md-10">{this.getContent()}</div>
+                                <div className="col-12 col-md-2">{this.getSideBar()}</div>
                             </div>
                         </div>
                     </Router>

@@ -35,7 +35,7 @@ function Chart(props) {
                 />
             </VictoryGroup>
             <VictoryAxis axisLabelComponent={<VictoryLabel angle={-45} textAnchor="end" />} style={{ tickLabels: { angle: -45, textAnchor: "end" } }} />
-            <VictoryAxis dependentAxis axisLabelComponent={<VictoryLabel dy={20} />} label="Ratings ⮕" style={{ axisLabel: { padding: 50 } }} tickValues={[1, 2, 3, 4, 5]} domain={[0, 5]} />
+            <VictoryAxis dependentAxis axisLabelComponent={<VictoryLabel dy={20} />} label="Ratings ⮕" style={{ axisLabel: { padding: 50 } }} tickValues={[1.0, 2.0, 3.0, 4.0, 5.0]} domain={[0.0, 5.0]} />
         </VictoryChart>
     );
 }

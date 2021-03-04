@@ -1,5 +1,5 @@
+import uuid from "react-uuid";
 function Row(props) {
-    console.log(props);
     return (
         <tr>
             <td>{props.project}</td>
@@ -11,12 +11,14 @@ function Row(props) {
 
 function Table(props) {
     return (
-        <div className="overflow-auto col-12 col-md-10" style={{ height: 450 }}>
+        <div className="overflow-auto" style={{ height: 450 }}>
             <table className="table">
                 <thead>
-                    <th>Project name</th>
-                    <th>Average rating</th>
-                    <th>Average difficulty</th>
+                    <tr>
+                        <th>Project name</th>
+                        <th>Average rating</th>
+                        <th>Average difficulty</th>
+                    </tr>
                 </thead>
                 <tbody className="overflow-auto">
                     {props.averages.map((rating) => {
