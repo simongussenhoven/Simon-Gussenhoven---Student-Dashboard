@@ -22,10 +22,11 @@ function Slider(props) {
             items: 1,
         },
     };
+    const dark = "bg-dark"
     return (
         <div className="container">
             <Carousel responsive={responsive}>
-                <Link className="d-flex justify-content-center" to="/" onClick={() => props.handleInput("all", "all")}>
+                <Link className="d-flex justify-content-center text-decoration-none text-dark" to="/" onClick={() => props.handleInput("all", "all")}>
                     <div key={uuid()} className="card mx-2">
                         <div className="card-body d-flex justify-content-center align-content-center flex-column">
                             <img className="w-50 rounded-circle mx-auto" src={process.env.PUBLIC_URL + `/user-img/users.png`} alt="users" />
