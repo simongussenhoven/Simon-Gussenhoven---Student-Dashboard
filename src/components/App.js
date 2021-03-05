@@ -69,11 +69,8 @@ class App extends React.Component {
         const newStudents = this.state.selectedStudents.map((student) => {
             if (student.name === event.target.value) {
                 student.displayed = event.target.checked;
-                student.dataDisplayed = event.target.checked;
                 return student;
             } else {
-                student.dataDisplayed = false;
-                student.dataDisplayed = event.target.checked;
                 return student;
             }
         });

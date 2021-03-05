@@ -6,7 +6,6 @@ const initNames = (projectReviews, data) => {
         const totalData = {
             name: student,
             displayed: true,
-            dataDisplayed: false,
             ...otherData,
         };
         return totalData;

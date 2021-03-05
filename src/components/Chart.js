@@ -1,7 +1,7 @@
 import { VictoryBar, VictoryChart, VictoryAxis, VictoryGroup, VictoryLabel, VictoryLegend } from "victory";
 function Chart(props) {
     return (
-        <VictoryChart padding={{ top: 50, bottom: 140, left: 100, right: 10 }} domainPadding={15} height={400} width={1200}>
+        <VictoryChart padding={{ top: 50, bottom: 140, left: 100, right: 10 }} domainPadding={15} height={450} width={1200}>
             <VictoryLegend
                 x={110}
                 y={1}

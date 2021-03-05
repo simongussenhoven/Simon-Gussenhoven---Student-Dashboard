@@ -11,7 +11,7 @@ function Row(props) {
 
 function Table(props) {
     return (
-        <div className="overflow-auto" style={{ height: 450 }}>
+        <div className="overflow-auto" style={{ height: 550 }}>
             <table className="table">
                 <thead>
                     <tr>
